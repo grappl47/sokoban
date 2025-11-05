@@ -169,7 +169,7 @@ public class Block : MonoBehaviour
     /// <summary>
     /// Sets parent grid cell and initial grid position
     /// </summary>
-    public void SetNewGridPos(GameObject _parent, int _gridX, int _gridY)
+    public virtual void SetNewGridPos(GameObject _parent, int _gridX, int _gridY)
     {
         _parent.GetComponent<Cell>().ContainObj = gameObject;
         transform.SetParent(_parent.transform);
