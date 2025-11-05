@@ -1,7 +1,7 @@
 using Unity.Mathematics;
 using UnityEngine;
 
-public class Player : Block
+public class AntiPlayer : Block
 {
 
     [SerializeField]
@@ -16,19 +16,19 @@ public class Player : Block
     {
         if (Input.GetKey(KeyCode.A))
         {
-            if (CheckMove(-1, 0)) transform.rotation = Quaternion.LookRotation(Vector3.left);
+            if (CheckMove(1, 0)) transform.rotation = Quaternion.LookRotation(Vector3.right);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            if (CheckMove(1, 0)) transform.rotation = Quaternion.LookRotation(Vector3.right);
+            if (CheckMove(-1, 0)) transform.rotation = Quaternion.LookRotation(Vector3.left);
         }
         else if (Input.GetKey(KeyCode.W))
         {
-            if (CheckMove(0, -1)) transform.rotation = Quaternion.LookRotation(Vector3.back);
+            if (CheckMove(0, 1)) transform.rotation = Quaternion.LookRotation(Vector3.back);
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            if (CheckMove(0, 1)) transform.rotation = Quaternion.LookRotation(Vector3.forward);
+            if (CheckMove(0, -1)) transform.rotation = Quaternion.LookRotation(Vector3.forward);
         }
     }
 
